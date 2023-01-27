@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Script/main.gd" type="Script" id=2]
+
+[node name="Main" type="Node"]
+script = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TableList" type="ItemList" parent="CanvasLayer"]
+anchor_left = 0.3
+anchor_right = 0.7
+margin_top = 10.0
+margin_bottom = 400.0
+items = [ "0 : Get Started", null, false, "1 : Wandering", null, false, "2 : Rotate Around", null, false ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EditorButton" type="Button" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -55.0
+margin_top = -120.0
+margin_right = 55.0
+margin_bottom = -80.0
+text = "EDITOR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="Button" parent="CanvasLayer"]
+anchor_left = 0.3
+anchor_right = 0.7
+margin_top = 410.0
+margin_bottom = 450.0
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="CanvasLayer/StartButton" to="." method="_on_StartButton_pressed"]
